@@ -4,10 +4,13 @@ import { Provider } from "react-redux";
 
 import store from "./store/store";
 import * as styles from "./styles";
+import {Users} from "./components";
 
 const App = () => (
   <Provider store={store}>
-    <div className={styles.App} />
+    <div className={styles.App} >
+        <Users />
+    </div>
   </Provider>
 );
 
