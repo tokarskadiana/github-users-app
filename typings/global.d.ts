@@ -1,7 +1,14 @@
 import { Store as ReduxStore } from 'redux';
 
 declare global {
-  interface Store {}
+  interface User {
+    username: string;
+  }
+
+  interface Store {
+    users: User[];
+    selectedUser: User | undefined;
+  }
 
   interface Window {
     store?: ReduxStore<Store>;
