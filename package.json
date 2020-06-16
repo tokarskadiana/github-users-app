@@ -10,13 +10,15 @@
     "lint:declarations": "tslint --project tsconfig.json --format stylish --fix './typings/**/*'",
     "prepush": "npm run lint && tsc --noEmit",
     "dependencies:update": "npx npm-check --update --save-exact",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "format": "prettier --write \"src/**/*.(ts|tsx|json)\""
   },
   "engines": {
     "node": ">=10",
     "npm": ">=6"
   },
   "dependencies": {
+    "prettier": "^2.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "7.2.0",
