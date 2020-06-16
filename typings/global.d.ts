@@ -6,8 +6,8 @@ declare global {
   }
 
   interface Store {
-    users: User[];
-    selectedUser: User | undefined;
+    users?: User[];
+    selectedUser?: User;
   }
 
   interface Window {

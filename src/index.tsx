@@ -1,14 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import store from './store/store';
 
+import store from './store/store';
 import * as styles from './styles';
 
 const App = () => (
   <Provider store={store}>
-    <div className={styles.App}>
-    </div>
+    <div className={styles.App}/>
   </Provider>
 );
 
