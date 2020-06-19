@@ -1,16 +1,12 @@
 import { Store as ReduxStore } from 'redux';
+import './users';
 
 declare global {
-  interface User {
-    username: string;
-  }
-
-  interface Store {
-    users?: User[];
-    selectedUser?: User;
+  interface AppState {
+    users: UsersState;
   }
 
   interface Window {
-    store?: ReduxStore<Store>;
+    store?: ReduxStore<AppState>;
   }
 }
