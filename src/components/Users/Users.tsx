@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { getUsers } from "../../actions";
 import { Action } from "redux";
+import styles from "./Users.css";
 
 type PropsFromStore = {
   getUsers: () => Action;
@@ -22,10 +23,18 @@ class Users extends React.Component<PropsFromStore, {}> {
   render(): React.ReactElement {
     return (
       <div>
-        <h1>Users</h1>
-        <ul>
+        <h1>GitHub users</h1>
+        <ul className={styles.usersList}>
           {this.props.usersList.map((user: User, i: number) => (
-            <li key={i}>{user.username}</li>
+            <li key={i} className={styles.user}>
+              <img
+                className={styles.avatar}
+                src={user.avatarUrl}
+                alt="avatar"
+                width="70px"
+              />
+              <span className={styles.username}>@{user.username}</span>
+            </li>
           ))}
         </ul>
         {this.props.isLoading ? <p>Loading ....</p> : ""}

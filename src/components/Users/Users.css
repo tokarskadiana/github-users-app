@@ -1,0 +1,33 @@
+.usersList {
+  list-style: none;
+  padding: 0;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #9c9c9c;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.user:last-child {
+  border-bottom: 1px solid #9c9c9c;
+}
+
+.user:hover {
+  background-color: #f1f1f1;
+}
+
+.username {
+ font-size: 20px;
+  padding: 0 10px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+
+.avatar {
+  border-radius: 50%;
+}

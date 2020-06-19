@@ -3,7 +3,7 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import store from "./store/store";
-import * as styles from "./styles";
+import styles from "./styles/index.css";
 import Users from "./components/Users/Users";
 
 const App = () => (
