@@ -1,18 +1,18 @@
 import { setUsers, UsersActionTypes } from "../actions";
 import { Action, Dispatch, Middleware, MiddlewareAPI } from "redux";
+import axios from "axios";
 
+const githubApiBaseUrl = "https://api.github.com/users";
+
+const mapToUsers = (response: any): User[] => {
+  return response.data.map((user: any): User => ({ username: user.login }));
+};
+
+// add catch block
 const fetchUsers = (dispatch: Dispatch): void => {
-  new Promise<{ data: User[] }>((resolve: Function): void =>
-    resolve({
-      data: [
-        { username: "@hdhdhdh" },
-        { username: "@manekd" },
-        { username: "@somename12" },
-        { username: "@rahahhh" },
-      ],
-    })
-  ).then(({ data }: { data: User[] }) => {
-    dispatch(setUsers(data));
+  axios.get(githubApiBaseUrl).then((response) => {
+    console.log(response);
+    dispatch(setUsers(mapToUsers(response)));
   });
 };
 
