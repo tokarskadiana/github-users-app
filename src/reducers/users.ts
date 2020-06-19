@@ -7,7 +7,7 @@ const initialState: UsersState = {
 const users = (state = initialState, action: UsersAction): UsersState => {
   switch (action.type) {
     case UsersActionTypes.SET_USERS:
-      return { usersList: action.payload };
+      return { usersList: [...state.usersList, ...action.payload] };
     default:
       return state;
   }

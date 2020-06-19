@@ -8,8 +8,15 @@ type PropsFromStore = {
 } & UsersState;
 
 class Users extends React.Component<PropsFromStore, {}> {
+  private handleScroll = this.loadUsers.bind(this);
+
   componentDidMount(): void {
     this.props.getUsers();
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount(): void {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   render(): React.ReactElement {
@@ -23,6 +30,19 @@ class Users extends React.Component<PropsFromStore, {}> {
         </ul>
       </div>
     );
+  }
+
+  private loadUsers(): void {
+    if (this.distFromBottom === 0) {
+      this.props.getUsers();
+    }
+  }
+
+  private get distFromBottom(): number {
+    const scrollPosition = window.pageYOffset;
+    const windowSize = window.innerHeight;
+    const bodyHeight = document.body.offsetHeight;
+    return Math.max(bodyHeight - (scrollPosition + windowSize), 0);
   }
 }
 
