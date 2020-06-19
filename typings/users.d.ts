@@ -4,4 +4,5 @@ interface User {
 
 interface UsersState {
     usersList: User[];
+    isLoading: boolean;
 }

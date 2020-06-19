@@ -28,12 +28,13 @@ class Users extends React.Component<PropsFromStore, {}> {
             <li key={i}>{user.username}</li>
           ))}
         </ul>
+        {this.props.isLoading ? <p>Loading ....</p> : ""}
       </div>
     );
   }
 
   private loadUsers(): void {
-    if (this.distFromBottom === 0) {
+    if (this.distFromBottom < 30 && !this.props.isLoading) {
       this.props.getUsers();
     }
   }
