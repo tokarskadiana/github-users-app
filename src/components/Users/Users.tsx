@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getUsers } from "../../actions";
 import { Action } from "redux";
 import styles from "./Users.css";
+import UsersListItem from "../UsersListItem/UsersListItem";
 
 type PropsFromStore = {
   getUsers: () => Action;
@@ -26,14 +27,8 @@ class Users extends React.Component<PropsFromStore, {}> {
         <h1>GitHub users</h1>
         <ul className={styles.usersList}>
           {this.props.usersList.map((user: User, i: number) => (
-            <li key={i} className={styles.user}>
-              <img
-                className={styles.avatar}
-                src={user.avatarUrl}
-                alt="avatar"
-                width="70px"
-              />
-              <span className={styles.username}>@{user.username}</span>
+            <li key={i}>
+              <UsersListItem user={user} />
             </li>
           ))}
         </ul>

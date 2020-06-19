@@ -1,0 +1,25 @@
+.user {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.user:hover {
+  background-color: #f1f1f1;
+}
+
+.username {
+  font-size: 20px;
+  padding: 0 10px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.avatarWrapper {
+  width: 70px;
+  height: 70px;
+  background-color: #9c9c9c;
+  border-radius: 50%;
+}
