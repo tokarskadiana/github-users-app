@@ -1,7 +1,6 @@
-import { ReducersMapObject, combineReducers } from 'redux';
+import { ReducersMapObject, combineReducers } from "redux";
+import users from "./users";
 
-const reducersMap: ReducersMapObject = {
-  example: (state: Store = {}) => state,
-};
+const reducersMap: ReducersMapObject = { users };
 
-export default combineReducers<Store>(reducersMap);
+export default combineReducers<AppState>(reducersMap);
