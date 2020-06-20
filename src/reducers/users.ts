@@ -2,6 +2,7 @@ import { UsersAction, UsersActionTypes } from "../actions";
 
 const initialState: UsersState = {
   usersList: [],
+  selectedUser: null,
   isLoading: false,
 };
 
@@ -19,6 +20,14 @@ const users = (state = initialState, action: UsersAction): UsersState => {
         usersList: [...state.usersList, ...action.payload],
         isLoading: false,
       };
+
+    case UsersActionTypes.SET_SELECTED_USER:
+      return {
+        ...state,
+        selectedUser: action.payload,
+        isLoading: false,
+      };
+
     default:
       return state;
   }

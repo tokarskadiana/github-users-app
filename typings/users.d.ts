@@ -5,5 +5,6 @@ interface User {
 
 interface UsersState {
     usersList: User[];
+    selectedUser: User | null;
     isLoading: boolean;
 }
