@@ -62,5 +62,9 @@
     "tslint-react": "3.6.0",
     "tslint-sonarts": "1.8.0",
     "vrsource-tslint-rules": "5.8.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

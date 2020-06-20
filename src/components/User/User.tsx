@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import { GetUserAction, getUser } from '../../actions';
 import Avatar from '../Avatar/Avatar';
+import Loader from '../Loader/Loader';
 
 import Github from './Github';
 import Header from './Header';
@@ -36,7 +37,7 @@ class User extends React.Component<PropsFromStore> {
         ) : (
           ''
         )}
-        {this.props.isLoading ? <p>Loading ....</p> : ''}
+        {this.props.isLoading ? <Loader /> : ''}
       </div>
     );
   }

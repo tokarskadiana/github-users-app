@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { GetUsersAction, getUsers } from '../../actions';
+import Loader from '../Loader/Loader';
 import UsersListItem from '../UsersListItem/UsersListItem';
 
 import styles from './Users.css';
@@ -22,7 +23,9 @@ class Users extends React.Component<PropsFromStore> {
   private readonly handleScroll = this.loadUsers.bind(this);
 
   componentDidMount(): void {
-    this.props.getUsers();
+    if (!this.props.usersList.length) {
+      this.props.getUsers();
+    }
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -41,7 +44,7 @@ class Users extends React.Component<PropsFromStore> {
             </li>
           ))}
         </ul>
-        {this.props.isLoading ? <p>Loading ....</p> : ''}
+        {this.props.isLoading ? <Loader /> : ''}
       </div>
     );
   }
