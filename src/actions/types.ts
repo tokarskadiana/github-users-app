@@ -3,7 +3,8 @@ import { Action } from "redux";
 export enum UsersActionTypes {
   SET_USERS = "SET_USERS",
   GET_USERS = "GET_USERS",
-  SET_SELECTED_USER = "SET_SELECTED_USER",
+  SET_USER = "SET_USER",
+  GET_USER = "GET_USER",
 }
 
 export interface SetUsersAction extends Action {
@@ -15,12 +16,18 @@ export interface GetUsersAction extends Action {
   type: UsersActionTypes.GET_USERS;
 }
 
-export interface SetSelectedUserAction extends Action {
-  type: UsersActionTypes.SET_SELECTED_USER;
-  payload: User;
+export interface GetUserAction extends Action {
+  type: UsersActionTypes.GET_USER;
+  payload: string;
+}
+
+export interface SetUserAction extends Action {
+  type: UsersActionTypes.SET_USER;
+  payload: User | null;
 }
 
 export type UsersAction =
   | SetUsersAction
   | GetUsersAction
-  | SetSelectedUserAction;
+  | GetUserAction
+  | SetUserAction;

@@ -7,7 +7,7 @@ import {
 
 import { root } from "../reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
-import usersApiMiddleware from "../middleware/users-api";
+import usersApiMiddleware from "../middleware/users/users-api";
 
 const store: ReduxStore<AppState> = createStore(
   root,

@@ -1,31 +1,35 @@
 .userDetails {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .avatarWrapper {
-
+  width: 150px;
+  height: 150px;
+  background-color: #9c9c9c;
+  border-radius: 50%;
 }
 
 .username {
-    text-align: center;
-    font-size: 24px;
-    flex-basis: 100%;
+  text-align: center;
+  font-size: 24px;
+  flex-basis: 100%;
 }
 
 .github {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-.github a {
-    padding-left: 10px;
-    transition: color 0.5s;
+.githubLink {
+  padding-left: 10px;
+  transition: color 0.5s;
 }
 
-.github a, a:visited {
-    color: #03a9f4;
+.githubLink,
+.githubLink:visited {
+  color: #03a9f4;
 }
 
-.github a:hover {
-    color: #0383bd;
+.githubLink:hover {
+  color: #0383bd;
 }

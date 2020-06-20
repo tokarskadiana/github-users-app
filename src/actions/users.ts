@@ -1,6 +1,7 @@
 import {
+  GetUserAction,
   GetUsersAction,
-  SetSelectedUserAction,
+  SetUserAction,
   SetUsersAction,
   UsersActionTypes,
 } from "./types";
@@ -18,9 +19,16 @@ export function getUsers(): GetUsersAction {
   };
 }
 
-export function setSelectedUser(user: User): SetSelectedUserAction {
+export function setUser(user: User | null): SetUserAction {
   return {
-    type: UsersActionTypes.SET_SELECTED_USER,
+    type: UsersActionTypes.SET_USER,
     payload: user,
+  };
+}
+
+export function getUser(username: string): GetUserAction {
+  return {
+    type: UsersActionTypes.GET_USER,
+    payload: username,
   };
 }
