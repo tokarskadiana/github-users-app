@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+  min-width: 300px;
+  img {
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+}
+
+.userDetails {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    font-size: 18px;
+    padding-top: 20px;
+  }
+
+  .username, .name {
+    text-align: center;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .githubLink {
+    padding-left: 10px;
+    transition: color 0.5s;
+
+    &,
+    &:visited {
+      color: #03a9f4;
+    }
+    &:hover {
+      color: #0383bd;
+    }
+  }
+}

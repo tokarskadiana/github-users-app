@@ -1,10 +1,13 @@
-import styles from "./User.css";
+import styles from "./User.scss";
 import * as React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Action } from "redux";
 import { getUser } from "../../actions";
 import { RouteComponentProps } from "react-router";
+import Github from "./Github";
+import Avatar from "../Avatar/Avatar";
+import Header from "./Header";
 
 type PropsFromStore = {
   getUser: (username: string) => Action;
@@ -12,11 +15,6 @@ type PropsFromStore = {
   RouteComponentProps<{ username: string }>;
 
 class User extends React.Component<PropsFromStore, {}> {
-  avatarStyles = {
-    width: "150px",
-    borderRadius: "50%",
-  };
-
   componentDidMount(): void {
     const { username } = this.props.match.params;
     this.props.getUser(username);
@@ -25,28 +23,14 @@ class User extends React.Component<PropsFromStore, {}> {
   render() {
     return (
       <div>
-        <h1>User Details</h1>
+        <Header />
         {this.props.user ? (
           <div className={styles.userDetails}>
-            <div className={styles.avatarWrapper}>
-              <img
-                src={this.props.user.avatarUrl}
-                alt="avatar"
-                style={this.avatarStyles}
-              />
-            </div>
+            <Avatar src={this.props.user.avatarUrl} size={150} />
+            <p className={styles.name}>{this.props.user.name}</p>
             <p className={styles.username}>@{this.props.user.username}</p>
-            <p className={styles.github}>
-              Github page:
-              <a
-                className={styles.githubLink}
-                href={this.props.user.githubUrl}
-                rel="noopener"
-                target="_blank"
-              >
-                {this.props.user.githubUrl}
-              </a>
-            </p>
+            <Github url={this.props.user.githubUrl} />
+            <p>Public Repos: {this.props.user.reposCount}</p>
           </div>
         ) : (
           ""
