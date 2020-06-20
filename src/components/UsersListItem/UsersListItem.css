@@ -4,6 +4,8 @@
   padding: 20px;
   cursor: pointer;
   transition: background-color 0.5s;
+  text-decoration: none;
+  color: #000;
 }
 
 .user:hover {
