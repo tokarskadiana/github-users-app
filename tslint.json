@@ -134,7 +134,23 @@
     "prefer-const-enum": true,
     "no-commented-out-code": true,
     "no-map-without-usage": true,
-    "newspaper-order": true,
+    "member-ordering": [
+      true,
+      {
+        "alphabetize": true,
+        "order": [
+          "public-static-field",
+          "public-instance-field",
+          "public-constructor",
+          "private-static-field",
+          "private-instance-field",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
     "no-complex-conditionals": true,
     "no-for-each-push": true,
     "use-default-type-parameter": true,
