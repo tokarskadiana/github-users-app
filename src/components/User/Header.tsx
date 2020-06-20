@@ -2,9 +2,14 @@ import * as React from "react";
 import arrow from "../../assets/arrow-back.svg";
 import styles from "./User.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setUser, SetUserAction } from "../../actions";
 
-const Header = () => {
-  const handleClick = () => {};
+interface Props {
+  setUser: (user: User | null) => SetUserAction;
+}
+const Header = ({ setUser }: Props) => {
+  const handleClick = () => setUser(null);
   return (
     <h1 className={styles.header}>
       <Link to="/users">
@@ -15,4 +20,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default connect(null, { setUser })(Header);
