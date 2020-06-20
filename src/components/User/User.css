@@ -1,0 +1,31 @@
+.userDetails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.avatarWrapper {
+
+}
+
+.username {
+    text-align: center;
+    font-size: 24px;
+    flex-basis: 100%;
+}
+
+.github {
+    font-size: 18px;
+}
+
+.github a {
+    padding-left: 10px;
+    transition: color 0.5s;
+}
+
+.github a, a:visited {
+    color: #03a9f4;
+}
+
+.github a:hover {
+    color: #0383bd;
+}

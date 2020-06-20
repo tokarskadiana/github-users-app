@@ -5,15 +5,27 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import styles from "./styles/index.css";
 import Users from "./components/Users/Users";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import User from "./components/User/User";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 const App = () => (
   <Provider store={store}>
     <div className={styles.App}>
       <Router>
         <Switch>
-          <Route path="/">
+          <Route path="/users/:username">
+            <User />
+          </Route>
+          <Route path="/users">
             <Users />
+          </Route>
+          <Route path="/">
+            <Redirect to="/users" />
           </Route>
         </Switch>
       </Router>

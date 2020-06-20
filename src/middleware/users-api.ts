@@ -11,6 +11,7 @@ const mapToUsers = (response: any): User[] => {
     (user: any): User => ({
       username: user.login,
       avatarUrl: user.avatar_url,
+      githubUrl: user.html_url,
     })
   );
 };

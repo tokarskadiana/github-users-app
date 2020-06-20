@@ -1,6 +1,7 @@
 interface User {
     username: string;
     avatarUrl: string;
+    githubUrl: string;
 }
 
 interface UsersState {
