@@ -6,29 +6,29 @@ import {
   UsersActionTypes,
 } from "./types";
 
-export function setUsers(users: User[]): SetUsersAction {
+export const setUsers = (users: User[]): SetUsersAction => {
   return {
     type: UsersActionTypes.SET_USERS,
     payload: users,
   };
-}
+};
 
-export function getUsers(): GetUsersAction {
+export const getUsers = (): GetUsersAction => {
   return {
     type: UsersActionTypes.GET_USERS,
   };
-}
+};
 
-export function setUser(user: User | null): SetUserAction {
+export const setUser = (user: User | null): SetUserAction => {
   return {
     type: UsersActionTypes.SET_USER,
     payload: user,
   };
-}
+};
 
-export function getUser(username: string): GetUserAction {
+export const getUser = (username: string): GetUserAction => {
   return {
     type: UsersActionTypes.GET_USER,
     payload: username,
   };
-}
+};
