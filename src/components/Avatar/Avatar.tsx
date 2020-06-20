@@ -1,21 +1,19 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface Props {
+  size: string;
   src: string;
-  size: number;
 }
 
 const Avatar = ({ src, size }: Props) => {
   const avatarStyles = {
-    width: `${size}px`,
+    backgroundColor: '#c9c9c9',
+    borderRadius: '50%',
     height: `${size}px`,
-    borderRadius: "50%",
-    backgroundColor: "#c9c9c9",
+    width: `${size}px`,
   };
 
-  return (
-    <img src={src} alt="avatar" style={avatarStyles} />
-  );
+  return <img src={src} alt="avatar" style={avatarStyles} />;
 };
 
 export default Avatar;

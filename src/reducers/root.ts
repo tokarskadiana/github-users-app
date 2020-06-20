@@ -1,5 +1,6 @@
-import { ReducersMapObject, combineReducers } from "redux";
-import users from "./users";
+import { ReducersMapObject, combineReducers } from 'redux';
+
+import users from './users';
 
 const reducersMap: ReducersMapObject = { users };
 

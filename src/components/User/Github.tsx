@@ -1,5 +1,6 @@
-import styles from "./User.scss";
-import * as React from "react";
+import * as React from 'react';
+
+import styles from './User.scss';
 
 const Github = ({ url }: { url: string }) => {
   return (
@@ -8,7 +9,7 @@ const Github = ({ url }: { url: string }) => {
       <a
         className={styles.githubLink}
         href={url}
-        rel="noopener"
+        rel="noopener noreferrer"
         target="_blank"
       >
         {url}

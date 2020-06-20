@@ -1,15 +1,15 @@
-import { Action } from "redux";
+import { Action } from 'redux';
 
 export enum UsersActionTypes {
-  SET_USERS = "SET_USERS",
-  GET_USERS = "GET_USERS",
-  SET_USER = "SET_USER",
-  GET_USER = "GET_USER",
+  SET_USERS = 'SET_USERS',
+  GET_USERS = 'GET_USERS',
+  SET_USER = 'SET_USER',
+  GET_USER = 'GET_USER',
 }
 
 export interface SetUsersAction extends Action {
-  type: UsersActionTypes.SET_USERS;
   payload: User[];
+  type: UsersActionTypes.SET_USERS;
 }
 
 export interface GetUsersAction extends Action {
@@ -17,13 +17,13 @@ export interface GetUsersAction extends Action {
 }
 
 export interface GetUserAction extends Action {
-  type: UsersActionTypes.GET_USER;
   payload: string;
+  type: UsersActionTypes.GET_USER;
 }
 
 export interface SetUserAction extends Action {
+  payload?: User;
   type: UsersActionTypes.SET_USER;
-  payload: User | null;
 }
 
 export type UsersAction =

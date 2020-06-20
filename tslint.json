@@ -169,7 +169,7 @@
         "function",
         "array"
     ],
-    "id-length": [true, { "exceptions": ["_", "K", "P", "T", "U", "V"] }],
+    "id-length": [true, { "exceptions": ["_", "K", "P", "T", "U", "V", "a", "p"] }],
     "no-null-keyword": true,
     "no-unnecessary-class": true,
     "early-exit": true,

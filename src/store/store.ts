@@ -1,23 +1,23 @@
 import {
   Store as ReduxStore,
+  applyMiddleware,
   combineReducers,
   createStore,
-  applyMiddleware,
-} from "redux";
+} from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { root } from "../reducers";
-import { composeWithDevTools } from "redux-devtools-extension";
-import usersApiMiddleware from "../middleware/users/users-api";
+import usersApiMiddleware from '../middleware/users/users-api';
+import { root } from '../reducers';
 
 const store: ReduxStore<AppState> = createStore(
   root,
-  composeWithDevTools(applyMiddleware(usersApiMiddleware))
+  composeWithDevTools(applyMiddleware(usersApiMiddleware)),
 );
 
 if (module.hot !== undefined) {
   module.hot.accept(() => {
     const nextRootReducer = combineReducers<AppState>({
-      ...require("../reducers/root").default,
+      ...require('../reducers/root').default,
     });
 
     store.replaceReducer(nextRootReducer);

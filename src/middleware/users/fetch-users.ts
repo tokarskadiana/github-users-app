@@ -1,10 +1,14 @@
-import { Dispatch } from "redux";
-import axios from "axios";
-import { setUsers } from "../../actions";
-import { BASE_URL, mapToUser } from "./users-api.helper";
+import axios from 'axios';
+import { Dispatch } from 'redux';
 
-const per_page = 20;
-let since = 0;
+import { setUsers } from '../../actions';
+
+import { BASE_URL, mapToUser } from './users-api.helper';
+
+let params = {
+  per_page: 20,
+  since: 0,
+};
 
 const mapToUsers = (response: any): User[] => {
   return response.data.map(mapToUser);
@@ -13,10 +17,10 @@ const mapToUsers = (response: any): User[] => {
 const fetchUsers = (dispatch: Dispatch): void => {
   axios
     .get(BASE_URL, {
-      params: { per_page, since },
+      params,
     })
-    .then((response) => {
-      since = response.data[response.data.length - 1].id;
+    .then(response => {
+      params = { ...params, since: response.data[response.data.length - 1].id };
       dispatch(setUsers(mapToUsers(response)));
     })
     .catch(() => dispatch(setUsers([])));

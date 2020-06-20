@@ -1,9 +1,8 @@
-import { UsersAction, UsersActionTypes } from "../actions";
+import { UsersAction, UsersActionTypes } from '../actions';
 
 const initialState: UsersState = {
-  usersList: [],
-  user: null,
   isLoading: false,
+  usersList: [],
 };
 
 const users = (state = initialState, action: UsersAction): UsersState => {
@@ -18,15 +17,15 @@ const users = (state = initialState, action: UsersAction): UsersState => {
     case UsersActionTypes.SET_USERS:
       return {
         ...state,
-        usersList: [...state.usersList, ...action.payload],
         isLoading: false,
+        usersList: [...state.usersList, ...action.payload],
       };
 
     case UsersActionTypes.SET_USER:
       return {
         ...state,
-        user: action.payload,
         isLoading: false,
+        user: action.payload,
       };
 
     default:

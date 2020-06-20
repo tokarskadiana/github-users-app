@@ -1,17 +1,17 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-
-import store from "./store/store";
-import styles from "./styles/index.css";
-import Users from "./components/Users/Users";
-import User from "./components/User/User";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Redirect,
-} from "react-router-dom";
+  Route,
+  Switch,
+} from 'react-router-dom';
+
+import User from './components/User/User';
+import Users from './components/Users/Users';
+import store from './store/store';
+import styles from './styles';
 
 const App = () => (
   <Provider store={store}>
@@ -33,7 +33,7 @@ const App = () => (
   </Provider>
 );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 if (module.hot !== undefined) {
   module.hot.accept();

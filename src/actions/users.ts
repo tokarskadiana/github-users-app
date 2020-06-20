@@ -4,12 +4,12 @@ import {
   SetUserAction,
   SetUsersAction,
   UsersActionTypes,
-} from "./types";
+} from './types';
 
 export const setUsers = (users: User[]): SetUsersAction => {
   return {
-    type: UsersActionTypes.SET_USERS,
     payload: users,
+    type: UsersActionTypes.SET_USERS,
   };
 };
 
@@ -19,16 +19,16 @@ export const getUsers = (): GetUsersAction => {
   };
 };
 
-export const setUser = (user: User | null): SetUserAction => {
+export const setUser = (user?: User): SetUserAction => {
   return {
-    type: UsersActionTypes.SET_USER,
     payload: user,
+    type: UsersActionTypes.SET_USER,
   };
 };
 
 export const getUser = (username: string): GetUserAction => {
   return {
-    type: UsersActionTypes.GET_USER,
     payload: username,
+    type: UsersActionTypes.GET_USER,
   };
 };
