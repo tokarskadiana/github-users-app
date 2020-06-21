@@ -1,5 +1,6 @@
-import usersReducer from './users';
 import { UsersActionTypes } from '../actions';
+
+import usersReducer from './users';
 
 describe('Users reducer', () => {
   const initialState: UsersState = { usersList: [], isLoading: false };
@@ -55,7 +56,7 @@ describe('Users reducer', () => {
 
       expect(newState).toEqual({ ...initialState, isLoading: false });
     });
-  })
+  });
 
   it('GET_USERS sets isLoading to true', () => {
     const newState = usersReducer(initialState, {
