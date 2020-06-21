@@ -11,7 +11,7 @@ import {
 import User from './components/User/User';
 import Users from './components/Users/Users';
 import store from './store/store';
-import styles from './styles';
+import styles from './styles/styles.css';
 
 const App = () => (
   <Provider store={store}>
