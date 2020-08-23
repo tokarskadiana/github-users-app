@@ -1,4 +1,4 @@
-# Centra: recruitment
+# React + Redux recruitment task
 
 Create an application displaying GitHub users. Use [GitHub API](https://developer.github.com/v3/) as your data source.
 
